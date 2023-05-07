@@ -1,7 +1,7 @@
--- student_DB_v2.3 ; Etele V·rkoly
+-- student_DB_v2.3 ; Etele V√°rkoly
 -- database to store student data
 
--- KIPUCOL¡S.exe
+-- KIPUCOL√ÅS.exe
 
 USE master
 GO
@@ -1904,11 +1904,11 @@ AS
 
 	SET NOCOUNT ON ;
 	
-	/*
-	UPDATE asd 
-	SET LastModified = SYSDATETIME()
-	WHERE asd IN (SELECT inserted.asd FROM inserted)
-	*/
+	
+--	UPDATE asd 
+--	SET LastModified = SYSDATETIME()
+--	WHERE asd IN (SELECT inserted.asd FROM inserted)
+	
 
 	UPDATE asd
 	SET LastModified = SYSDATETIME()
