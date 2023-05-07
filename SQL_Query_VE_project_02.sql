@@ -3,9 +3,9 @@ GO
 
 -- 1. feladat
 
-SELECT TOP 20 SOH.SalesOrderID AS 'Rendelésszám',
-			  SOH.DueDate AS 'Teljesítés dátuma',
-			  SOH.TotalDue AS 'Rendelési összeg'
+SELECT TOP 20 SOH.SalesOrderID AS 'RendelÃ©sszÃ¡m',
+			  SOH.DueDate AS 'TeljesÃ­tÃ©s dÃ¡tuma',
+			  SOH.TotalDue AS 'RendelÃ©si Ã¶sszeg'
 FROM Sales.SalesOrderHeader AS SOH 
 INNER JOIN Sales.SalesOrderDetail AS SOD ON SOD.SalesOrderID = SOH.SalesOrderID
 WHERE SOD.ProductID IN (
@@ -316,7 +316,7 @@ BACKUP DATABASE [HungarianMovie] TO  DISK = N'C:\Program Files\Microsoft SQL Ser
 GO
 
 
--- 8. és 9. 
+-- 8. Ã©s 9. 
 
 
 USE [msdb]
@@ -329,10 +329,10 @@ EXEC  msdb.dbo.sp_add_job @job_name=N'HunMovieBackup',
 		@notify_level_page=2, 
 		@delete_level=0, 
 		@category_name=N'[Uncategorized (Local)]', 
-		@owner_login_name=N'DESKTOP-D7HVGA0\user', @job_id = @jobId OUTPUT
+		@owner_login_name=N'DESKTOP\user', @job_id = @jobId OUTPUT
 select @jobId
 GO
-EXEC msdb.dbo.sp_add_jobserver @job_name=N'HunMovieBackup', @server_name = N'DESKTOP-D7HVGA0'
+EXEC msdb.dbo.sp_add_jobserver @job_name=N'HunMovieBackup', @server_name = N'DESKTOP'
 GO
 USE [msdb]
 GO
@@ -360,7 +360,7 @@ EXEC msdb.dbo.sp_update_job @job_name=N'HunMovieBackup',
 		@delete_level=0, 
 		@description=N'', 
 		@category_name=N'[Uncategorized (Local)]', 
-		@owner_login_name=N'DESKTOP-D7HVGA0\user', 
+		@owner_login_name=N'DESKTOP\user', 
 		@notify_email_operator_name=N'', 
 		@notify_page_operator_name=N''
 GO
